@@ -1,0 +1,326 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Begin Font Styles */
+body {
+  font-family: 'Candal', sans-serif;
+}
+/* End Font Styles */
+
+
+
+/* Begin Background Image Expressions */
+.introduction {
+	background-position: center bottom;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-size: cover;
+  height: 65.0rem;
+  overflow: auto;
+  margin-bottom: 10px;
+}
+
+.introduction {
+  background-image: url('http://www.yourfavoritepets.com/wp-content/uploads/2015/10/all-pets.jpg');
+  background-color: PaleGoldenRod;
+  background-blend-mode: screen; 
+}
+/* End Background Image Expressions */
+
+
+
+/* Begin Headline & Intro Text Expressions */
+.introduction h1,
+.introduction h3 {
+  color: black;
+  text-align: center;
+  font-weight: 550;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.introduction h1 {
+  margin: 5.0rem 0 1.0rem 0;
+  font-size: 4.0rem;
+}
+
+.introduction h3 {
+  margin-top: 1.60rem;
+  font-size: 1.50rem;
+}
+/* End Headline & Intro Text Expressions */
+
+
+/* Begin Question Counter Expressions */
+
+#counter {
+   font-size: 1.25rem;
+   margin-top: .5em;
+   color: #4DCB6D;
+}
+/* End Question Counter Expressions */
+
+
+
+/* Begin "Get Started", "Submit" and "Next Question" Multi-use Button */
+
+body {
+    background: #A7A9AC;
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(.34, rgba(230,237,241,.05)),
+        color-stop(.67, rgba(230,237,241,0)));
+    -webkit-background-size: 5px 5px;
+}
+
+#pagegradient {
+  background-image:
+        -webkit-gradient(
+            radial, 
+            50% -50, 
+            300, 
+            50% 0, 
+            0, 
+            from(rgba(230, 237, 241, 0)), 
+            to(rgba(230, 237, 241, 0.8)));
+    
+  height: 100%;
+  left:0 px;
+  position: absolute;
+  top: 0;
+  width: 600px;
+}
+
+.button {
+    position: absolute;
+    top: 900px;
+    left: 200px;
+    display: inline-block;
+    margin: 0 auto;
+    
+    -webkit-border-radius: 10px;
+    
+    /* gradient effects */
+    -webkit-box-shadow: 
+        0px 3px rgba(128,128,128,1), 
+        0px 4px rgba(118,118,118,1),
+        0px 5px rgba(108,108,108,1),
+        0px 6px rgba(98,98,98,1),
+        0px 7px rgba(88,88,88,1),
+        0px 8px rgba(78,78,78,1),
+        0px 14px 6px -1px rgba(128,128,128,1); /* shadow */
+    
+    -webkit-transition: -webkit-box-shadow .1s ease-in-out;
+} 
+
+.button span {
+    background-color: #E8E8E8;
+
+    /* gloss gradient */
+    background-image: 
+            -webkit-gradient(
+            linear, 
+            left bottom, 
+            left top, 
+            color-stop(50%,rgba(255,255,255,0)), 
+            color-stop(50%,rgba(255,255,255,0.3)), 
+            color-stop(100%,rgba(255,255,255,0.2))),
+      
+            
+        -webkit-gradient(
+            linear, 
+            left top, 
+            right top, 
+            color-stop(0%,rgba(210,210,210,0.3)), 
+            color-stop(20%,rgba(210,210,210,0)), 
+            color-stop(80%,rgba(210,210,210,0)), 
+            color-stop(100%,rgba(210,210,210,0.3))),
+        
+
+        -webkit-gradient(
+            linear, 
+            left top, 
+            right top, 
+            color-stop(0%,rgba(255,255,255,0)), 
+            color-stop(20%,rgba(255,255,255,0.5)), 
+            color-stop(80%,rgba(255,255,255,0.5)), 
+            color-stop(100%,rgba(255,255,255,0))),        
+     
+
+        -webkit-gradient(
+            linear, 
+            0% 100%, 
+            100% 0%, 
+            color-stop(0%,rgba(255,255,255,0)), 
+            color-stop(40%,rgba(255,255,255,0)), 
+            color-stop(40%,#D2D2D1), 
+            color-stop(60%,#D2D2D1), 
+            color-stop(60%,rgba(255,255,255,0)), 
+            color-stop(100%,rgba(255,255,255,0)));
+    
+        -webkit-box-shadow:
+            0px -1px #fff, 
+            0px 1px 1px #FFFFFF; /* bottom edge */
+    
+    -webkit-background-size: 100%, 100%, 100%, 4px 4px;
+    
+    -webkit-border-radius: 5px;
+    -webkit-transition: -webkit-transform .1s ease-in-out;
+    
+    display: inline-block;
+    padding: 10px 40px 10px 40px;
+    
+    color: #3A474D;
+    text-transform: uppercase;
+    font-family: 'Candal', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    
+    text-shadow: 0px 1px #fff, 0px -1px #262F33;
+}
+
+        .button span:hover {
+            color: #4DCB6D;
+            text-shadow: 0px -1px #97A63A;
+            cursor: pointer;
+        }
+
+        .button:active {
+            -webkit-box-shadow: 
+                0px 3px rgba(128,128,128,1),
+                0px 4px rgba(118,118,118,1),
+                0px 5px rgba(108,108,108,1),
+                0px 6px rgba(98,98,98,1),
+                0px 7px rgba(88,88,88,1),
+                0px 8px rgba(78,78,78,1),
+                0px 10px 2px 0px rgba(128,128,128,.6); /* shadow */
+        }
+
+        .button:active span {
+            -webkit-transform: translate(0, 5px); /* depth of button press */
+        }
+
+    .button span:after {
+        content: ">";
+        display: block;
+        width: 10px;
+        height: 10px;
+    
+        position: absolute;
+        right: 20px;
+        top: 8px;    
+        }
+/* Begin "Get Started", "Submit" and "Next Question" Button */
+
+
+
+/* Begin Five Questions Section */
+.questions {
+ font-weight: 600;
+ font-family: 'Lato', sans-serif;
+ }
+/* End Five Questions Section */
+
+
+
+/* Begin Answer Results Display */
+#answerResult {
+    padding: 1.0em 2.0em;
+    font-size: 1.5em;
+    color: #333;
+}
+/* End Answer Results Display */
+
+
+/* Begin Radio Button Answers Section */
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+  margin: 5px;
+  color: #999;
+  background-color: #eee;
+}
+
+form {
+  left-margin: 140px 0;
+}
+
+div {
+  clear: both;
+  margin: 0 150px;
+}
+
+label {
+  width: 400px;
+  border-radius: 3px;
+  border: 1px solid #D1D3D4
+}
+
+/* hide input */
+input.radio:empty {
+  margin-left: -999px;
+}
+
+/* style label */
+input.radio:empty ~ label {
+  position: relative;
+  float: left;
+  line-height: 2.5em;
+  text-indent: 3.25em;
+  margin-top: 2em;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input.radio:empty ~ label:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 2.5em;
+  background: #D1D3D4;
+  border-radius: 3px 0 0 3px;
+}
+
+/* toggle hover */
+input.radio:hover:not(:checked) ~ label:before {
+  content:'\2714';
+  text-indent: .9em;
+  color: #C2C2C2;
+}
+
+input.radio:hover:not(:checked) ~ label {
+  color: #888;
+}
+
+/* toggle on */
+input.radio:checked ~ label:before {
+  content:'\2714';
+  text-indent: .9em;
+  color: #9CE2AE;
+  background-color: #4DCB6D;
+}
+
+input.radio:checked ~ label {
+  color: #777;
+}
+
+/* radio focus */
+input.radio:focus ~ label:before
+
+/* End Radio Button Answers Section */
+
+
+
+
+
