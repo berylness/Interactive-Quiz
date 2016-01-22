@@ -43,98 +43,116 @@ var questions = [
 /* Function to Kick Off a New Quiz */
 function newQuiz() {
   	
-  	var currentQuestion = 0;
+    currentQuestion=0;
 
-	/* Sets Question Counter to 1 of 5 */
-  	$('#counter').empty().append((currentQuestion+1) + ' of 5');
+/* Sets Question Counter to "1 of 5" */
+  	$('#counter').text((currentQuestion+1));
 
-  	/* Clear Out Any Answer Feedback Text from Previous Quiz*/
-  	$('#feedback').hide();
+/* Hides Any Visible Answer Feedback From Previous Quizzes*/
+    $('#correct').hide();
+    $('#wrong').hide();
 
-	/* Displays First Question */
-  	$('#questions').empty().append(questions[currentQuestion].question);
+/* Displays First Question */
+  	$('#questions').text(questions[currentQuestion].question);
 
-  	/* Display "Submit Answer" Button */
+/* Displays the Four Answer Options */
+    $('#answer1').text(questions[currentQuestion].choices[0]);
+    $('#answer2').text(questions[currentQuestion].choices[1]);
+    $('#answer3').text(questions[currentQuestion].choices[2]);
+    $('#answer4').text(questions[currentQuestion].choices[3]);
+
+/* Displays the "Submit Answer" Button */
   	$('#submit-btn').show();
 
-  	/* Hide the Two Unneeded Buttons */
+/* Hides the "Next Question" and "Take Quiz Again" Buttons */
   	$('#next-btn').hide();
   	$('#again-btn').hide();
 };
 
-/* Invoking Functions Section */
-newQuiz();
-progressQuiz();
-reviewAnswer();
-endQuiz();
 
-/* Function to Move the User Through Questions 2- 5 */
+   
+/* Global Variable outside of the function */
+var currentQuestion = 0;
+
+/* Invoking New Quiz Function */
+newQuiz();
+
+
+
+/* FUNCTION to Assess User's Answer */
+  function reviewAnswer() {
+  
+/* Determine Whether the Answer is Correct */
+   if ($(this).text() == questions[currentQuestion].correct) {
+
+/* Display "Correct" Answer Text*/
+   $('#correct').show();
+  }
+
+/* If Answer is Wrong Display Incorrect Answer Prompt */
+   else {
+    $('#wrong').show();
+  };
+
+ /* Switch "Submit" Button to "Next Question" Button */
+    $('.next-btn').show(); 
+
+/* Hides Unneeded Buttons */
+    $('#submit-btn').hide();
+    $('#again-btn').hide();
+
+ };
+
+
+/* FUNCTION to Move the User Through Quiz Questions 2-5 */
 function progressQuiz() {
 
-	/* Move to Next Question in the Index */
+/* Move to Next Question in the Index */
  	 currentQuestion++;
 
-	/* Clear Previous Question and Sets the Next Question */
-  	$('#questions').empty().append(questions[currentQuestion].question);
+/* Advance the Question Counter */
+    $('#counter').text((currentQuestion+1));
+	
+/* Display the Next Question */
+    $('#questions').text(questions[currentQuestion].question);
 
-    /* Clears Previous Question Feedback */
-	for (var i = 0, length = questions[i].answers.length - 1; i <= length; i++) {
-    $('#choice' + i).empty().append(questions[currentQuestion].answers[i]);
-    console.log(i);
-  
-	/* Updates the Counter with New Question Count */
-    $('#counter').empty();
+/* Displays the Four Answer Options */
+    $('#answer1').text(questions[currentQuestion].choices[0]);
+    $('#answer2').text(questions[currentQuestion].choices[1]);
+    $('#answer3').text(questions[currentQuestion].choices[2]);
+    $('#answer4').text(questions[currentQuestion].choices[3]);
 
-    /* Display "Submit Answer" Button */
+/* Display "Submit Answer" Button */
   	$('#submit-btn').show();
 
-    /* Hides Unneeded Buttons */
+/* Hides Unneeded Buttons */
   	$('#next-btn').hide();
   	$('#again-btn').hide();
 
- 	/* Remove Right or Wrong Answer Indicator from Previous Question */ 
+/* Removes Right or Wrong Answer Text from Previous Question */ 
   	$('#correct').hide();
   	$('#wrong').hide();
 	};
-};
 
 
 
-/* Function to Assess User's Answer */
-	function reviewAnswer() {
 
-	/* When an Answer is Selected */
-	$('.answers').click(function() {
   
-	/* Determine Whether the Answer is Correct */
- 	if ($(this).text() == questions[currentQuestion].correct) {
+/* Invokes the reviewAnswer function if "Submit" button is clicked */ 
+    $('#submit-btn').click(function(){
+    reviewAnswer();
+    }); 
 
-	/* Display Correct Answer Text*/
-    right++;
-    $('#correct').show();
-  	}
+/* Invokes the progressQuiz function if "Next Question" button is clicked */ 
+    $('#next-btn').click(function(){
+    progressQuiz();
+    }); 
 
-	/* If Answer is Not Correct, Display Wrong Answer Prompt */
-  	else if ($(this).text() != questions[currentQuestion].correct) {
-	
-   	$('#wrong').show();
- 	}
-
- 	/* Show "Next Question" Button After Answer Result is Displayed */
- 	$('.next-btn').show(); 
-
- 	/* Hides Unneeded Buttons */
-  	$('#submit-btn').hide();
-  	$('#again-btn').hide();
-	});
-};
-	
-
-/* Function to End the Quiz After Question 5 */
+/* FUNCTION to End the Quiz After Question 5 */
 	function endQuiz() {
 	$('#again-btn').show();
 	$('#next-btn').hide();
 	$('#submit-btn').hide();
-    };
+  };
 
 });

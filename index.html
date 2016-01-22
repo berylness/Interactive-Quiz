@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Lato:400,900' rel='stylesheet' type='text/css'>
-		<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
 		<script src="js/app.js"></script>
 </head>
 
@@ -20,7 +20,7 @@
 	<div class="container">
 		<p class="q-number">
 			Question
-			<span id="counter">1</span>
+			<span id="counter"></span>
 			 of 
 			<span>5</span>
 		</p>
@@ -29,7 +29,7 @@
 
  	<!-- The Five Quiz Questions -->
   	<div id="main">
-    	<div id="questions"><h2>"Which breed of dog did NOT originate in the United States?"</h2></div>
+    	<div><h2 id="questions">""</h2></div>
  	</div>
 	
 
@@ -37,29 +37,29 @@
 	<div class="answers">
 		<div>
 		<input type="radio" name="radio" id="radio1" value="0" class="radio" checked/>
-		<label for="radio1">Boston Terrier</label>
+		<label id="answer1" for="radio1">Boston Terrier</label>
 		</div>
 
 		<div>
 		<input type="radio" name="radio" id="radio2" value="1" class="radio"/>
-		<label for="radio2">Toy Fox terrier</label>
+		<label id="answer2" for="radio2">Toy Fox terrier</label>
 		</div>
 
 		<div>	
 		<input type="radio" name="radio" id="radio3" value="2" class="radio"/>
-		<label for="radio3">Chesapeake Bay Retriever</label>
+		<label id="answer3" for="radio3">Chesapeake Bay Retriever</label>
 		</div>
 
 		<div>	
 		<input type="radio" name="radio" id="radio4" value="3" class="radio"/>
-		<label for="radio4">Flat-Coated Retriever</label>
+		<label id="answer4" for="radio4">Flat-Coated Retriever</label>
 		</div>
 	</div>
 
  	<!-- Right or Wrong Answer Indicator -->
   	<div class="feedback">
-    	<div id="correct">Congratulations! Your choice is Correct.</div>
-    	<div id="wrong">Sorry! Your answer is Incorrect.</div>
+    	<div id="correct"><span>Congratulations! Your Choice is Correct.</span></div>
+    	<div id="wrong"><span>Sorry! Your Answer is Incorrect.</span></div>
     </div>
 
 

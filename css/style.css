@@ -153,15 +153,15 @@ input.radio:checked ~ label {
 }
 
 /* radio focus */
-input.radio:focus ~ label:before
-
+input.radio:focus ~ label:before {
+}
 /* End Radio Button Answer Choices Section */
 
 
 /* Begin Answer Results Display */
 .feedback {
     padding: 1.0em 2.0em;
-    font-size: 11.5em;
+    font-size: 1.5em;
     margin-left: 4.5em;
     color: #333;
 }
