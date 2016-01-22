@@ -9,6 +9,7 @@
 		<script src="js/app.js"></script>
 </head>
 
+
 <body>
 	<section class="introduction">
 		<div class="content">
@@ -16,72 +17,66 @@
 			<h3>Take the quiz to determine your expertise</h3>
 		</div>
 
-	<div class="container" id="counter">
+	<div class="container">
 		<p class="q-number">
 			Question
-			<span>1</span>
+			<span id="counter">1</span>
 			 of 
 			<span>5</span>
 		</p>
 	</div>
 
-    <!-- Multi-Use Button -->
-	<div id="pagegradient"></div>
-		    <a class="button">
-		      <span>Get Started</span>
-    		</a>
 
-
-    <div class="questions">
-		<h2>Which breed of dog did NOT originate in the United States?</h2>
-	<!-- h2>Which breed of dog is considered to be the oldest breed in existence?</h2>
-		<h2>In 2015, which was the most popular breed worldwide?</h2>
-		<h2>WWhich breed of dog is known for being “bark-less”?</h2>
-		<h2>On average which is the tallest breed of dog?</h2>-->
-	</div>
+ 	<!-- The Five Quiz Questions -->
+  	<div id="main">
+    	<div id="questions"><h2>"Which breed of dog did NOT originate in the United States?"</h2></div>
+ 	</div>
 	
 
+	<!-- Four Answers Per Question -->
 	<div class="answers">
-		<input type="radio" name="radio" id="radio1" class="radio" checked/>
+		<div>
+		<input type="radio" name="radio" id="radio1" value="0" class="radio" checked/>
 		<label for="radio1">Boston Terrier</label>
-		<!-- Answer Option for Question 2: Afghan Hound
-		     Answer Option for Question 3: Beagle
-		     Answer Option for Question 4: Basenji
-		     Answer Option for Question 5: Irish Wolfhound-->
 		</div>
 
 		<div>
-		<input type="radio" name="radio" id="radio2" class="radio"/>
-		<label for="radio2">Toy Fox Terrier</label>
-		<!-- Answer Option for Question 2: Borzoi
-		     Answer Option for Question 3: Labrador Retriever
-		     Answer Option for Question 4: Otterhound
-		     Answer Option for Question 5: Great Dane-->
+		<input type="radio" name="radio" id="radio2" value="1" class="radio"/>
+		<label for="radio2">Toy Fox terrier</label>
 		</div>
 
 		<div>	
-		<input type="radio" name="radio" id="radio3" class="radio"/>
+		<input type="radio" name="radio" id="radio3" value="2" class="radio"/>
 		<label for="radio3">Chesapeake Bay Retriever</label>
-		<!-- Answer Option for Question 2: Pekingese
-		     Answer Option for Question 3: Golden Retriever
-		     Answer Option for Question 4: Chihuahua
-		     Answer Option for Question 5: Tibetan Mastiff-->
 		</div>
 
 		<div>	
-		<input type="radio" name="radio" id="radio4" class="radio"/>
+		<input type="radio" name="radio" id="radio4" value="3" class="radio"/>
 		<label for="radio4">Flat-Coated Retriever</label>
-		<!-- Answer Option for Question 2: Samoyed
-		     Answer Option for Question 3: German Shepard
-		     Answer Option for Question 4: Puli
-	         Answer Option for Question 5: Scottish Deerhound-->
 		</div>
-
-
-	<div>
-	<p id="answerResult">Right Answer!</p>
-	<!-- Alternative Text Display "Incorrect Answer"-->
 	</div>
+
+ 	<!-- Right or Wrong Answer Indicator -->
+  	<div class="feedback">
+    	<div id="correct">Congratulations! Your choice is Correct.</div>
+    	<div id="wrong">Sorry! Your answer is Incorrect.</div>
+    </div>
+
+
+    <!-- Buttons -->
+
+	<button id="submit-btn">
+	    <span>Submit Answer</span>
+	</button>
+
+	<button id="next-btn">
+	    <span>Next Question</span>
+	</button>
+
+	<button id="again-btn">
+	    <span>Take Quiz Again</span>
+	</button>
+	
 
 </section>
 
