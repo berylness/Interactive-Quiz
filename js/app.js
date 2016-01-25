@@ -44,8 +44,9 @@ var questions = [
 function newQuiz() {
   	
     currentQuestion=0;
+    userScore = 0;
 
-/* Sets Question Counter to "1 of 5" */
+/* (Re)Sets Question Counter to "1 of 5" */
   	$('#counter').text((currentQuestion+1));
 
 /* Hides Any Visible Answer Feedback From Previous Quizzes*/
@@ -67,12 +68,17 @@ function newQuiz() {
 /* Hides the "Next Question" and "Take Quiz Again" Buttons */
   	$('#next-btn').hide();
   	$('#again-btn').hide();
+
+    $('#finalScore').hide();
+
+    $('#next-btn span').text('Next Question'); 
 };
 
 
    
 /* Global Variable outside of the function */
 var currentQuestion = 0;
+var userScore = 0;
 
 /* Invoking New Quiz Function */
 newQuiz();
@@ -82,8 +88,11 @@ newQuiz();
 /* FUNCTION to Assess User's Answer */
   function reviewAnswer() {
   
-/* Determine Whether the Answer is Correct */
-   if ($(this).text() == questions[currentQuestion].correct) {
+/* If Statement to Determine Whether the Answer is Correct */
+  if ($(".answers input[type='radio']:checked").val() == questions[currentQuestion].correct) {
+
+/* Increment User Score By +1 */
+    userScore++;
 
 /* Display "Correct" Answer Text*/
    $('#correct').show();
@@ -94,8 +103,14 @@ newQuiz();
     $('#wrong').show();
   };
 
- /* Switch "Submit" Button to "Next Question" Button */
-    $('.next-btn').show(); 
+
+/* If Statement to Prompt "Check Your Score" button when Question 5 is reached */
+  if(currentQuestion == 4) {
+    $('#next-btn span').text('Check Your Score'); 
+  }
+
+/* Switch "Submit" Button to "Next Question" Button */
+    $('#next-btn').show(); 
 
 /* Hides Unneeded Buttons */
     $('#submit-btn').hide();
@@ -107,8 +122,12 @@ newQuiz();
 /* FUNCTION to Move the User Through Quiz Questions 2-5 */
 function progressQuiz() {
 
-/* Move to Next Question in the Index */
+/* Increments to the Next Question in the Index */
  	 currentQuestion++;
+
+/* If Statement to Prevent the Quiz from Progressing Past Question 5 */
+  if(currentQuestion < questions.length){
+
 
 /* Advance the Question Counter */
     $('#counter').text((currentQuestion+1));
@@ -116,6 +135,7 @@ function progressQuiz() {
 /* Display the Next Question */
     $('#questions').text(questions[currentQuestion].question);
 
+    
 /* Displays the Four Answer Options */
     $('#answer1').text(questions[currentQuestion].choices[0]);
     $('#answer2').text(questions[currentQuestion].choices[1]);
@@ -129,30 +149,45 @@ function progressQuiz() {
   	$('#next-btn').hide();
   	$('#again-btn').hide();
 
-/* Removes Right or Wrong Answer Text from Previous Question */ 
+/* Hides the Answer Feedback from the Previous Question */ 
   	$('#correct').hide();
   	$('#wrong').hide();
-	};
-
-
-
-
-  
-/* Invokes the reviewAnswer function if "Submit" button is clicked */ 
+    
+    } else {
+    endQuiz();
+    } 
+	}; 
+ 
+/* Invokes the reviewAnswer Function if "Submit" Button is Clicked */ 
     $('#submit-btn').click(function(){
     reviewAnswer();
     }); 
 
-/* Invokes the progressQuiz function if "Next Question" button is clicked */ 
+/* Invokes the progressQuiz function if "Next Question" Button is Clicked */ 
     $('#next-btn').click(function(){
     progressQuiz();
     }); 
 
+/* If "Take Quiz Again" Button is Clicked, Refresh Quiz */ 
+   $('#again-btn').click(function(){
+    newQuiz();
+    }); 
+
+
 /* FUNCTION to End the Quiz After Question 5 */
 	function endQuiz() {
-	$('#again-btn').show();
-	$('#next-btn').hide();
-	$('#submit-btn').hide();
+	  $('#again-btn').show();
+  	$('#next-btn').hide();
+  	$('#submit-btn').hide();
+
+/* Suppresses Feedback text from Question 5 */
+    $('#correct').hide();
+    $('#wrong').hide();
+
+/* After "Check Your Final Score" button is Clicked, Displays Score */
+    $('#finalScore span').text('Congratulations! You scored ' + userScore + ' out of 5');
+  
+    $('#finalScore').show();
   };
 
 });

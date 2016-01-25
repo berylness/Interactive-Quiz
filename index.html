@@ -5,18 +5,20 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Lato:400,900' rel='stylesheet' type='text/css'>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
 		<script src="js/app.js"></script>
 </head>
 
 
 <body>
+	<!-- Static Headline and SubHead -->
 	<section class="introduction">
 		<div class="content">
 			<h1>Think you know your Breeds of Dog?</h1>
 			<h3>Take the quiz to determine your expertise</h3>
 		</div>
-
+ 	
+ 	<!-- Score Counter -->
 	<div class="container">
 		<p class="q-number">
 			Question
@@ -33,7 +35,7 @@
  	</div>
 	
 
-	<!-- Four Answers Per Question -->
+	<!-- Answer Set for Each Quiz Question -->
 	<div class="answers">
 		<div>
 		<input type="radio" name="radio" id="radio1" value="0" class="radio" checked/>
@@ -56,15 +58,16 @@
 		</div>
 	</div>
 
+
  	<!-- Right or Wrong Answer Indicator -->
   	<div class="feedback">
     	<div id="correct"><span>Congratulations! Your Choice is Correct.</span></div>
     	<div id="wrong"><span>Sorry! Your Answer is Incorrect.</span></div>
+    	<div id="finalScore"><span></span></div>
     </div>
 
 
     <!-- Buttons -->
-
 	<button id="submit-btn">
 	    <span>Submit Answer</span>
 	</button>

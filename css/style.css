@@ -55,7 +55,6 @@ body {
 
 
 /* Begin Question Counter Expressions */
-
 .q-number {
    font-size: 1.25rem;
    margin-top: .5em;
@@ -158,14 +157,14 @@ input.radio:focus ~ label:before {
 /* End Radio Button Answer Choices Section */
 
 
-/* Begin Answer Results Display */
+/* Begin Answer Feedback Display */
 .feedback {
     padding: 1.0em 2.0em;
     font-size: 1.5em;
     margin-left: 4.5em;
     color: #333;
 }
-/* End Answer Results Display */
+/* End Answer Feedback Display */
 
 
 /* Begin Button Expressions */
