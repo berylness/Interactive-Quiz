@@ -128,7 +128,6 @@ function progressQuiz() {
 /* If Statement to Prevent the Quiz from Progressing Past Question 5 */
   if(currentQuestion < questions.length){
 
-
 /* Advance the Question Counter */
     $('#counter').text((currentQuestion+1));
 	
@@ -158,6 +157,7 @@ function progressQuiz() {
     } 
 	}; 
  
+
 /* Invokes the reviewAnswer Function if "Submit" Button is Clicked */ 
     $('#submit-btn').click(function(){
     reviewAnswer();
@@ -166,10 +166,13 @@ function progressQuiz() {
 /* Invokes the progressQuiz function if "Next Question" Button is Clicked */ 
     $('#next-btn').click(function(){
     progressQuiz();
+
+/* Clears out the checkmark when the user advances to the next question*/
+    $('.radio').prop('checked', false);
     }); 
 
 /* If "Take Quiz Again" Button is Clicked, Refresh Quiz */ 
-   $('#again-btn').click(function(){
+    $('#again-btn').click(function(){
     newQuiz();
     }); 
 
