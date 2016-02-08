@@ -65,7 +65,8 @@ function newQuiz() {
 /* Displays the "Submit Answer" Button */
   	$('#submit-btn').show();
 
-/* Hides the "Next Question" and "Take Quiz Again" Buttons */
+/* Hides the "Next Question" and "Take Quiz Again" Buttons and the Check Mark on Q1*/
+    $('.radio').prop('checked', false);
   	$('#next-btn').hide();
   	$('#again-btn').hide();
 
