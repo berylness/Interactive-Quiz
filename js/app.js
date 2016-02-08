@@ -1,3 +1,5 @@
+/* Interactive Quiz Challenge Script */
+
 $( document ).ready(function() {
 
 /* Array of the Quiz Questions, Answer Choices and Correct Answer Value */
